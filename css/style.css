@@ -24,19 +24,36 @@ html {
   color: #222;
   scroll-behavior: smooth;
   line-height: 1.4;
-  max-width: 1200px;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2em;
 }
 
-body {
-  margin: 1.5em;
+#intro > .wrapper,
+#behind-dough > .wrapper,
+footer {
+  border-top: solid whitesmoke;
 }
 
+#intro > .wrapper {
+  padding-top: 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
 
+#intro {
+  margin-top: 2em;
+}
 
-#header > div {
+#header > .wrapper {
   display: flex;
   justify-content: space-between;
   
@@ -52,10 +69,8 @@ nav ul {
 
 nav ul li {
   padding-left: 1.125em;
-  
-  
-
 }
+
 a {
   text-decoration: none;
   color: #000;
@@ -98,6 +113,7 @@ p{
 h1 {
   font-weight: bold;
   margin: 0;
+  font-size: var(--font-size-xl);
 }
 
 h2 {
@@ -109,6 +125,7 @@ h2 {
 h3 {
   font-weight: normal;
   margin: 0;
+  font-size: var(--font-size-sm);
 }
 
 h4, h5 {
@@ -117,47 +134,45 @@ h4, h5 {
   margin: 1em;
 }
 
-
-
-h1 {
-  font-size: var(--font-size-xl);
-}
-
 h2 {
   font-size: var(--font-size-sm);
 
 }
 
-h3 {
-  font-size: var(--font-size-sm);
 
-}
 
 
 h4 {
   font-size: var(--font-size-lg)
-
-
 }
 
 h5 {
   font-size: var(--font-size-md)
 }
 
-section:last-child {
+section {
     margin-top: 4em;
   }
 
-  .grid-1 div,
+.quotes {
+  display: flex;
+  flex-direction: column;
+}
+
 .grid-2 div {
-  padding: 1em;
   text-align: center;
+  background-color: whitesmoke;
+  border-radius: .5em;
+}
+
+.grid-2 img {
+  border-radius: .5em .5em 0 0;
 }
 
 .grid-1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 0em;
+  gap: 1em;
 }
 .grid-1 img {
   border-radius: .5em;
@@ -176,6 +191,10 @@ section:last-child {
   grid-column: 1 / 2;
 }
 
+.quotes {
+  flex-direction: row;
+}
+
 }
 
 .grid-2 {
@@ -184,7 +203,7 @@ section:last-child {
     "item1 item2"
     "item3 item4";
   grid-template-columns: 1fr 1fr;
-  gap: 0em;
+  gap: 1em;
 }
 
 #item-1 {
@@ -203,24 +222,23 @@ section:last-child {
   grid-area: item4;
 }
 
-@media (max-width: 60em) {
+@media (min-width: 60em) {
 
 .grid-2 {
   display: grid;
   grid-template-areas: 
     "item1 item2 item3 item4";
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 0em;
+}
+
+#intro > .wrapper {
+  flex-direction: row;
 }
 }
 
-.grid-2 img {
-  border-radius: .5em .5em 0 0;
-}
-#Testimonium {
+#testimonium {
   background-color: #000;
   color: #fff;
-  margin:0;
   padding: 4.5em;
   
 }
@@ -230,4 +248,5 @@ footer {
   background-color: #fff;
   text-align: center;
   padding: 1em 0;
+  margin-top: 3em;
 }
